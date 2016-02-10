@@ -195,15 +195,11 @@ CMS_PLACEHOLDER_CONF = {}
 
 DATABASES = {
     'default': {
-         'ENGINE': 'django.contrib.gis.db.backends.mysql',
-	 #'NAME': 'testTemplate',
-         #'USER': 'root',
-         #'PASSWORD':'mcot',
-         #'HOST':'localhost', # Set to empty string for localhost.
-         'NAME': 'geodatup$quorelcms',
-         'USER': 'geodatup',
-         'PASSWORD':'mcot9a9.u',
-         'HOST':'geodatup.mysql.pythonanywhere-services.com', # Set to empty string for localhost.
+        'ENGINE': 'django.contrib.gis.db.backends.mysql',
+         'NAME': 'testTemplate',
+         'USER': 'root',
+         'PASSWORD':'mcot',
+         'HOST':'localhost', # Set to empty string for localhost.
          'PORT':'', # Set to empty string for default.
     }
 }
