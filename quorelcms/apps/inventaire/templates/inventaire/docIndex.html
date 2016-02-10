@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="">
+	{% if latest_document_list %}
+	    <ul>
+	    {% for Document in latest_document_list %}
+	    <li><a href="{{ Document.slug }}">{{ Document.nom_document }}</a></li>
+	    {% endfor %}
+	    </ul>
+	{% else %}
+	    <p>Aucun document n'est disponbile.</p>
+	{% endif %}
+</div>
+{% endblock content %}
+

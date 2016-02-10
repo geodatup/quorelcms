@@ -1,0 +1,45 @@
+{% extends "leaflet/widget.html" %}
+{% load i18n %}
+{% load static from staticfiles %}
+
+
+
+{% block map %}
+<script type="text/javascript">
+    {% if target_map %}
+    window.addEventListener('map:init', function (e) {
+        var target_map = e.detail.map;
+        target_map.on('map:loadfield', function (me) {
+            if (me.fieldid == 'id_{{ target_map }}') {
+                setTimeout(function () {
+                    {{ id_map_callback }}(target_map, e.detail.options);
+                }, 0);
+            }
+        });
+    }, false);
+    {% endif %}
+
+    window.addEventListener("map:init", function (e) {
+        var detail = e.detail;
+        var target_map = e.detail.map;
+            L.control.coordinates({
+            position:"bottomleft", //optional default "bootomright"
+            decimals:2, //optional default 4
+            decimalSeperator:".", //optional default "."
+            labelTemplateLat:"Latitude: {y}", //optional default "Lat: {y}"
+            labelTemplateLng:"Longitude: {x}", //optional default "Lng: {x}"
+            enableUserInput:false, //optional default true
+            useDMS:false, //optional default false
+            useLatLngOrder: true, //ordering of labels, default false-> lng-lat
+            markerType: L.marker, //optional default L.marker
+            markerProps: {} //optional default {}
+            }).addTo(target_map);
+    }, false);
+</script> 
+
+
+<div id="{{ id }}_div_map">
+    {{ block.super }}
+</div>
+
+{% endblock map %}

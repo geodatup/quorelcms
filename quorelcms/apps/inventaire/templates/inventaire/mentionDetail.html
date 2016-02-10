@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+
+
+<div class="">
+        <h1>{{ mention_detail.mention }}</h1>
+        {% if mention_detail.page %}
+        <p>Pages : {{ mention_detail.page }}</p>
+        {% endif %}
+        {% if mention_detail.mention %}
+        <p>Mention : {{ mention_detail.mention }}</p>
+        {% endif %}
+        {% if mention_detail.commentaire %}
+        <p>Commentaire : {{ mention_detail.commentaire }}</p>
+        {% endif %}
+        {% if mention_detail.document %}
+        <p>Document : {{ mention_detail.document}}s</p>
+        {% endif %}
+        {% if mention_detail.sequence.all|length > 1 %}   
+        <p>{{ mention_detail.sequence.all|length }} sequences : </p>
+        <ul  class="list-inline" class="thumbnails"> 
+                {% for sequence in mention_detail.sequence.all %}          
+                <li><a href=" ../sequence/{{sequence.pk}}">{{ sequence }}</a></li>
+                </li>
+                {% endfor %}
+          </ul>
+        {% else %}
+        <p>{{ mention_detail.sequence.all|length }} sequence : </p>
+          {% for sequence in mention_detail.sequence.all %}          
+                <li><a href=" ../sequence/{{sequence.pk}}">{{ sequence }}</a></li>
+                </li>
+          {% endfor %}
+        {% endif %}   
+        
+</div>
+
+
+
+
+{% endblock content %}
+
+

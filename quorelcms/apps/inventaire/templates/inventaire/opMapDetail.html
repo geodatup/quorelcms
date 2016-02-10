@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load leaflet_tags %}
+{% load geojson_tags %}
+ 
+{% block content %}
+
+<div class="">
+        <h1>{{ operation.nom_operation }}</h1>
+        {% if operation.type_operation %}
+        <p>Type : {{ operation.type_operation }}</p>
+        {% endif %}        
+</div>
+
+
+{% endblock content %}
+
+{% block map %}
+
+    {% leaflet_map "main" callback="main_map_init" %}
+
+    <script type="text/javascript">
+    var collection = {{ operation|geojsonfeature|safe }};
+
+    
+    function main_map_init(map, options) {
+        var layer = L.geoJson(collection);
+        var overlaysBounds =[];
+        layer.addTo(map);
+        overlaysBounds.push(layer.getBounds());
+       
+        // featureLayer.getBounds() returns the corners of the furthest-out markers,
+        // and map.fitBounds() makes sure that the map contains these.
+        map.fitBounds(overlaysBounds, {padding: [50, 50]});
+        map.setZoom(13);
+        
+    }
+        
+    </script>
+{% endblock map %}
+
+  

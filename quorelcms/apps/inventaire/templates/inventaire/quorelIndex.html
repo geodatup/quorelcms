@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<li><a href="{% url 'inventaire:docIndex' %}">Documents</a></li>
+<li><a href="{% url 'inventaire:sequenceIndex' %}">Sequences</a></li>
+<li><a href="{% url 'inventaire:opMapIndex' %}">Operations</a></li>
+
+{% endblock content %}

@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load leaflet_tags %}
+{% leaflet_js %}
+{% leaflet_css %}
+
+  {% block content %}
+    <h1>Opérations</h1>
+  {% endblock content %}
+    
+{% block map %}
+
+    {% leaflet_map "main" callback="main_map_init" %}
+
+    <script type="text/javascript">
+        function main_map_init (map, options) {
+            // Use Leaflet API here
+             var dataurl = '{% url "inventaire:opData" %}';
+             // Download GeoJSON via Ajax
+             $.getJSON(dataurl, function (data) {
+                 // Add GeoJSON layer
+                 L.geoJson(data, {onEachFeature: onEachFeature}).addTo(map);
+             });
+        }
+
+        function onEachFeature(feature, layer) {
+          // does this feature have a property named popupContent?
+            if (feature.properties && feature.properties.popupContent) {
+                  layer.bindPopup(feature.properties.popupContent);
+            }
+        }
+    </script>
+{% endblock map %}
+
+  

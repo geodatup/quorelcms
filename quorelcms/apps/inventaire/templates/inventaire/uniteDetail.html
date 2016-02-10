@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+
+
+<div class="">
+        <h1>{{ unite_detail.nom_unite }}</h1>
+
+        {% if unite_detail.profondeur %}
+        <p>Profondeur : {{ unite_detail.profondeur }}</p>
+        {% endif %}
+        {% if unite_detail.epaisseur %}
+        <p>Epaisseur : {{ unite_detail.epaisseur }}</p>
+        {% endif %}
+        {% if unite_detail.commentaire %}
+        <p>Commentaire : {{ unite_detail.comentaire }}</p>
+        {% endif %}  
+        {% if unite_detail.texture_1 %}
+        <p>Texture 1 : {{ unite_detail.texture_1 }}</p>
+        {% endif %}    
+        {% if unite_detail.texture_2 %}
+        <p>Texture 2 : {{ unite_detail.texture_2 }}</p>
+        {% endif %}
+        {% if unite_detail.couleur %}
+        <p>Couleur : {{ unite_detail.couleur }}</p>
+        {% endif %}
+        {% if unite_detail.nuance_couleur %}
+        <p>Nuance couleur : {{ unite_detail.nuance_couleur }}</p>
+        {% endif %}
+        {% if unite_detail.valeur_couleur %}
+        <p>Valeur couleur : {{ unite_detail.valeur_couleur }}</p>
+        {% endif %}
+        {% if unite_detail.couleur_MSCC %}
+        <p>Code couleur Mansell : {{ unite_detail.couleur_MSCC }}</p>
+        {% endif %}
+        {% if unite_detail.tache %}
+        <p>Tache : {{ unite_detail.tache }}</p>
+        {% endif %}
+        {% if unite_detail.carbonate %}
+        <p>Carbonate : {{ unite_detail.carbonate }}</p>
+        {% endif %}
+        {% if unite_detail.type_carbon %}
+        <p>Type carbon : {{ unite_detail.type_carbon }}</p>
+        {% endif %}
+        {% if unite_detail.structure_1 %}
+        <p>Structure 1 : {{ unite_detail.structure_1 }}</p>
+        {% endif %}
+        {% if unite_detail.taille_structure %}
+        <p>Taille structure : {{ unite_detail.taille_structure }}</p>
+        {% endif %}
+        {% if unite_detail.structure_2 %}
+        <p>Structure 2 : {{ unite_detail.structure_2 }}</p>
+        {% endif %}
+        {% if unite_detail.sous_structure %}
+        <p>Sous structure : {{ unite_detail.sous_structure }}</p>
+        {% endif %}
+        {% if unite_detail.description_structure %}
+        <p>Descritption structure : {{ unite_detail.description_structure }}</p>
+        {% endif %}
+        {% if unite_detail.compacite %}
+        <p>Compacite : {{ unite_detail.compacite }}</p>
+        {% endif %}
+        {% if unite_detail.inclusion %}
+        <p>Inclusion : {{ unite_detail.inclusion }}</p>
+        {% endif %}
+        {% if unite_detail.mobilier %}
+        <p>Mobilier : {{ unite_detail.mobilier }}</p>
+        {% endif %}
+        {% if unite_detail.perturbation %}
+        <p>Perturbation : {{ unite_detail.perturbation }}</p>
+        {% endif %}
+        {% if unite_detail.interpretation_sedimentaire %}
+        <p>Interpretation sedimentaire : {{ unite_detail.interpretation_sedimentaire }}</p>
+        {% endif %}
+        {% if unite_detail.interpretation_pedologique %}
+        <p>Interprétation pédologique : {{ unite_detail.interpretation_pedologique }}</p>
+        {% endif %}
+        {% if unite_detail.interface %}
+        <p>Interface : {{ unite_detail.interface }}</p>
+        {% endif %}        
+        {% if unite_detail.echantillon %}
+        <p>Echantillon : {{ unite_detail.echantillon }}</p>
+        {% endif %}
+        {% if unite_detail.autre %}
+        <p>Autre : {{ unite_detail.autre }}</p>
+        {% endif %}
+
+
+
+</div>
+
+
+
+
+{% endblock content %}

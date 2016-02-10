@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+
+
+<div class="">
+        <h1>{{ sequence_detail.nom_sequence }}</h1>
+        {% if sequence_detail.unite.all|length > 1 %}   
+        <p>{{ sequence_detail.unite.all|length }} unites</p>
+        {% else %}
+        <p>{{ sequence_detail.unite.all|length }} unite</p>
+        {% endif %}   
+</div>
+
+<ul  class="list-inline" class="thumbnails"> 
+  		{% for unite in sequence_detail.unite.all %}
+  			
+  		
+      <li><a href=" ../unite/{{unite.pk}}">{{ unite }}</a></li>
+      </li>
+      {% endfor %}
+      </ul>
+
+
+
+{% endblock content %}
+
+

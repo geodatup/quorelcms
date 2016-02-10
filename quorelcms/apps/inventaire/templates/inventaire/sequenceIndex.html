@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+ {% block content %}
+<h1>Séquences</h1>
+<div class="">
+	    {% if sequence_list %}
+	    <ul>
+	    {% for Sequence in sequence_list %}
+	    <li><a href="{{ Sequence.pk }}">{{ Sequence.nom_sequence }}</a></li>
+	    {% endfor %}
+	    </ul>
+		{% else %}
+	    <p>Aucune séquence n'est disponbile.</p>
+		{% endif %}
+</div>
+
+
+
+ {% endblock content %}
