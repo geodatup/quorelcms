@@ -36,10 +36,6 @@ class SondageForm(forms.ModelForm):
         exclude = ['']
 
 
-
-
-
-
 class MentionInline(admin.TabularInline):
     model = Mention
     extra = 1
@@ -61,6 +57,7 @@ class DocumentAdmin(ImportExportModelAdmin):
         )         
         }),
     ]
+    prepopulated_fields = {'slug': ('nom_document',), }
     inlines = [
         MentionInline,
     ]
@@ -105,6 +102,7 @@ class OperationAdmin(ImportExportModelAdmin, LeafletGeoAdmin):
             ('geom'),   
         ),}
         ,)]
+    prepopulated_fields = {'slug': ('nom_operation',), }
     def geom_as_text(self, obj):
         return obj.geom_as_text()
     pass

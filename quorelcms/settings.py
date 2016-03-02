@@ -196,7 +196,7 @@ CMS_PLACEHOLDER_CONF = {}
 DATABASES = {
     'default': {
          'ENGINE': 'django.contrib.gis.db.backends.mysql',
-	 #'NAME': 'testTemplate',
+	     #'NAME': 'testTemplate',
          #'USER': 'root',
          #'PASSWORD':'mcot',
          #'HOST':'localhost', # Set to empty string for localhost.
