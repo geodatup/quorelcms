@@ -14,8 +14,19 @@ from django.contrib.gis.db import models as gismodels
 
 # Create your models here.
 @python_2_unicode_compatible
-class Document(models.Model):
-    nom_document = models.CharField(max_length=100)
+class Document(models.Model):    
+    type_doc_choix = (
+    ('Notice explicative de la carte pédologique de la France','Notice explicative de la carte pédologique de la France'),
+    ('Notice explicative de la carte géomorphologique détaillée de la France','Notice explicative de la carte géomorphologique détaillée de la France'),
+    ('Recherches archéologiques préventives','Recherches archéologiques préventives'),
+    ('Rapport de diagnostique archéologique','Rapport de diagnostique archéologique'),
+    ('Autre','Autre')
+    )
+    type_doc = models.CharField(max_length=300,
+        choices=type_doc_choix,
+        default='indéfini'
+        )
+    nom_document = models.CharField(max_length=300)
     auteur = models.CharField(max_length=100)
     annee = models.PositiveIntegerField(validators=[MaxValueValidator(2016)])
     commentaire = models.TextField(blank=True, null=True)

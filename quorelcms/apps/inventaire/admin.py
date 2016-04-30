@@ -51,7 +51,7 @@ class DocumentAdmin(ImportExportModelAdmin):
     list_display = ('nom_document','auteur','annee','traitement')
     fieldsets = [
         (None, {'fields': (
-          ('nom_document'),('auteur','annee'),          
+          ('type_doc','nom_document'),('auteur','annee'),          
           'commentaire',
           'traitement', 
         )         
