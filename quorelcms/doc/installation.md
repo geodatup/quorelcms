@@ -16,16 +16,16 @@ git commit -m "init"
 
 # publier sur le nouveau repo
 
-git remote add origin https://github.com/yougis/QuOrEL.git
+git remote add origin https://github.com/geodatup/QuOrEL.git
 git push origin master
 
 
 # sur pi clone
-git clone https://github.com/yougis/QuOrEL.git
+git clone https://github.com/geodatup/QuOrEL.git
 
 
 # sur client pull
-git pull https://github.com/yougis/QuOrEL.git master
+git pull https://github.com/geodatup/QuOrEL.git master
 
 # créer un env virtuel
 cd quorelcms
@@ -68,7 +68,7 @@ git push origin master
 
 ###clone Git (1er déployement)
 
-git clone https://github.com/yougis/QuOrEL.git
+git clone https://github.com/geodatup/QuOrEL.git
 
 
 virtualenv --python=python3.4 myvenv
