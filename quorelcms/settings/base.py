@@ -19,16 +19,6 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '9c5aby$s_9v4wwn0j%go2l-ful)jshlrsc)nx8%bsntz66jyld'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -193,16 +183,6 @@ CMS_PERMISSION = True
 
 CMS_PLACEHOLDER_CONF = {}
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.contrib.gis.db.backends.mysql',
-         'NAME': 'testTemplate',
-         'USER': 'root',
-         'PASSWORD':'mcot',
-         'HOST':'localhost', # Set to empty string for localhost.
-         'PORT':'', # Set to empty string for default.
-    }
-}
 
 MIGRATION_MODULES = {
     'cmsplugin_filer_teaser': 'cmsplugin_filer_teaser.migrations_django',

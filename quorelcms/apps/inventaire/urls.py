@@ -7,7 +7,7 @@ from .views import DocListView, DocDetailView, OpMapListView, Operation, Sequenc
 app_name = 'inventaire'
 urlpatterns = patterns('',
 	url(r'^$', views.index, name='index'),
-	url(r'^document/(?P<slug>[^/]+)', views.DocDetailView.as_view(), name='docDetail'),
+	url(r'^document/(?P<pk>[^/]+)', views.DocDetailView.as_view(), name='docDetail'),
     url(r'^document/$', views.DocListView.as_view(), name='docIndex'),
     url(r'^operation/data.geojson', GeoJSONLayerView.as_view(model=Operation, properties=('popupContent',)), name='opData'),
     url(r'^operation/$', views.OpMapListView.as_view(), name='opMapIndex'),

@@ -51,10 +51,14 @@ class DocumentAdmin(ImportExportModelAdmin):
     list_display = ('nom_document','auteur','annee','traitement')
     fieldsets = [
         (None, {'fields': (
-          ('nom_document','slug'),('auteur','annee'),          
+          ('nom_document'),('auteur','annee'),          
           'commentaire',
           'traitement', 
         )         
+        }),
+        ('Options Avancées', {
+            'classes': ('collapse',),
+            'fields': ('slug',),
         }),
     ]
     prepopulated_fields = {'slug': ('nom_document',), }
@@ -90,18 +94,23 @@ class OperationResource(resources.ModelResource):
         model = Operation
 
 class OperationAdmin(ImportExportModelAdmin, LeafletGeoAdmin):    
-    list_display = ('nom_operation','type_operation','geom_as_text',)
+    list_display = ('id','nom_operation','type_operation','geom_as_text',)
     resource_class = OperationResource
     form = OperationForm
     fieldsets = [
         (None, 
         {'fields': (
-            ('nom_operation','slug'),
+            ('id','nom_operation'),
             ('type_operation','z'),
             #('coords_longlat','coords_lambert','dim3'),            
             ('geom'),   
-        ),}
-        ,)]
+        )}),
+
+        ('Options Avancées', {
+            'classes': ('collapse',),
+            'fields': ('slug',),
+        }),
+        ]
     prepopulated_fields = {'slug': ('nom_operation',), }
     def geom_as_text(self, obj):
         return obj.geom_as_text()

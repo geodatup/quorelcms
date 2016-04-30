@@ -5,18 +5,23 @@
         <title>{% block title %}This is my new project home page{% endblock title %}</title>
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <link rel="stylesheet" href="{% static "css/styles.css" %}">
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+        <link rel="stylesheet" href="{% static "css/pures_examples.css" %}">
         {% leaflet_css %}
         {% render_block "css" %}
 
     </head>
     <body>
         {% cms_toolbar %}
-        <div class="container">
-            <ul class="nav">
-                {% show_menu 0 100 100 100 %}
-            </ul>
-            {% block content %}{% endblock content %}
-            {% block map %}{% endblock map %}
+        <div class="layout">
+            <div class="main">
+        
+                <ul class="nav">
+                    {% show_menu 0 100 100 100 %}
+                </ul>
+                {% block content %}{% endblock content %}
+                {% block map %}{% endblock map %}
+            </div>
         </div>
         {% render_block "js" %}
         {% leaflet_js %}
