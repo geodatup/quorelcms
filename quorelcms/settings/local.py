@@ -20,7 +20,7 @@ ALLOWED_HOSTS = []
 DATABASES = {
     'default': {
          'ENGINE': 'django.contrib.gis.db.backends.mysql',
-	     'NAME': 'testTemplate',
+	     'NAME': 'quorelcms',
          'USER': 'root',
          'PASSWORD':'mcot',
          'HOST':'localhost', # Set to empty string for localhost.

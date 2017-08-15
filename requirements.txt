@@ -1,6 +1,5 @@
 django-cms<3.3
 django-treebeard>=2.0
-
 https://github.com/divio/djangocms-column/archive/master.zip?1454941238.8632643
 https://github.com/divio/djangocms-googlemap/archive/master.zip?1454941238.8632643
 https://github.com/divio/djangocms-inherit/archive/master.zip?1454941238.8632643
@@ -19,3 +18,11 @@ html5lib
 Pillow>=2.3
 django-sekizai>=0.7
 six
+
+django-leaflet
+django-geojson
+django-import-export
+mysqlclient
+django-tables2
+django_select2
+mysqlclient
